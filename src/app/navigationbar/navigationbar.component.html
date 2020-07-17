@@ -1,0 +1,19 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top"> 
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand disable">Simple Web Application</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class = "nav navbar-nav navbar-right">
+                <li *ngIf="authserviceobj.loginstatusmethod() && authserviceobj.userrolemethod()"><a routerLink="/admin">Admin</a></li>
+                <li *ngIf="!authserviceobj.loginstatusmethod()"><a routerLink="/login">Log In</a></li>
+                <li *ngIf="!authserviceobj.loginstatusmethod()"><a routerLink="/register">Sign Up</a></li>
+                <li *ngIf="authserviceobj.loginstatusmethod()"><a routerLink="/login">Log Out</a></li>   
+            </ul>
+        </div>
+    </div>
+</nav>
